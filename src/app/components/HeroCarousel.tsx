@@ -5,10 +5,9 @@ import Image from 'next/image';
 import { useRef, useEffect } from 'react';
 
 const images = [
-    '/images/cover1.jpg',
-    '/images/cover2.jpg',
-    '/images/cover3.png',
-    '/images/cover4.png',
+    '/images/cover11.jpg',
+    '/images/cover33.jpg',
+    '/images/cover44.jpg',
 ];
 
 export default function HeroCarousel() {
