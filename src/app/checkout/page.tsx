@@ -1,12 +1,12 @@
 'use client'
 
+import { useRouter } from 'next/navigation';
 import { useCart } from '@/context/CartContext';
-import { useRouter } from 'next/router';
 import { useState } from 'react';
 
 export default function CheckoutPage() {
-    const { cart, getTotalPrice, clearCart } = useCart();
     const router = useRouter();
+    const { cart, getTotalPrice, clearCart } = useCart();
 
     const [form, setForm] = useState({
         name: '',
@@ -44,7 +44,7 @@ export default function CheckoutPage() {
                     placeholder='نام و نام خانوادگی'
                     value={form.name}
                     onChange={handleChange}
-                    className='p-3 rounded-xl text-black'
+                    className='p-3 rounded-xl text-black bg-white'
                 />
 
                 <input
@@ -53,7 +53,7 @@ export default function CheckoutPage() {
                     placeholder=' آدرس ایمیل '
                     value={form.email}
                     onChange={handleChange}
-                    className='p-3 rounded-xl text-black'
+                    className='p-3 rounded-xl text-black bg-white'
                 />
 
                 <input
@@ -62,7 +62,7 @@ export default function CheckoutPage() {
                     placeholder="شماره تماس"
                     value={form.phone}
                     onChange={handleChange}
-                    className="p-3 rounded-xl text-black"
+                    className="p-3 rounded-xl text-black bg-white text-right"
                 />
 
                 <div className="mt-4 bg-zinc-800 p-4 rounded-xl">

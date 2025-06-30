@@ -1,11 +1,17 @@
 'use client';
 
+import { useRouter } from 'next/navigation';
 import { useCart } from '@/context/CartContext';
 import Image from 'next/image';
 import Link from 'next/link';
 
 export default function CartPage() {
+    const router = useRouter();
     const { cart, removeFromCart, getTotalPrice } = useCart();
+
+    const handleGoToCheckout = () => {
+        router.push('/checkout');
+    };
 
     if (cart.length === 0) {
         return (
@@ -59,7 +65,11 @@ export default function CartPage() {
                         {getTotalPrice().toLocaleString()} تومان
                     </span>
                 </p>
-                <button className="mt-4 bg-green-500 text-white px-6 py-2 rounded-xl hover:bg-green-600 transition">
+
+                <button
+                    onClick={handleGoToCheckout}
+                    className="mt-4 bg-green-500 text-white px-6 py-2 rounded-xl hover:bg-green-600 transition"
+                >
                     ادامه به پرداخت 💳
                 </button>
             </div>
