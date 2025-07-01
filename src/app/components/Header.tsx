@@ -14,6 +14,9 @@ const Header = () => {
                 گالری شولستانی 🎨
             </Link>
 
+            <Link href={"/about"}>
+                درباره من
+            </Link>
             <Link href="/cart" className="relative">
                 <ShoppingCart className="w-6 h-6 text-white" />
                 {totalItems > 0 && (
